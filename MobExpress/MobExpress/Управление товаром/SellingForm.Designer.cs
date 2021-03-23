@@ -41,7 +41,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.OrderDGV = new Guna.UI.WinForms.GunaDataGridView();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Amtlbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.SellerNamelbl = new System.Windows.Forms.Label();
@@ -59,10 +59,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ProdoName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ProdoId = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.BillID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OrderDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProdoDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BillsDGV)).BeginInit();
@@ -112,6 +118,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.OrderDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.OrderDGV.ColumnHeadersHeight = 30;
+            this.OrderDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.PName,
+            this.Price,
+            this.Qty,
+            this.Total});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -124,6 +136,7 @@
             this.OrderDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.OrderDGV.Location = new System.Drawing.Point(584, 111);
             this.OrderDGV.Name = "OrderDGV";
+            this.OrderDGV.ReadOnly = true;
             this.OrderDGV.RowHeadersVisible = false;
             this.OrderDGV.RowTemplate.Height = 28;
             this.OrderDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -143,7 +156,7 @@
             this.OrderDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.OrderDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.OrderDGV.ThemeStyle.HeaderStyle.Height = 30;
-            this.OrderDGV.ThemeStyle.ReadOnly = false;
+            this.OrderDGV.ThemeStyle.ReadOnly = true;
             this.OrderDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.OrderDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.OrderDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -152,16 +165,16 @@
             this.OrderDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.OrderDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // label6
+            // Amtlbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(949, 316);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 28);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Валюта";
+            this.Amtlbl.AutoSize = true;
+            this.Amtlbl.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.Amtlbl.ForeColor = System.Drawing.Color.White;
+            this.Amtlbl.Location = new System.Drawing.Point(949, 316);
+            this.Amtlbl.Name = "Amtlbl";
+            this.Amtlbl.Size = new System.Drawing.Size(105, 28);
+            this.Amtlbl.TabIndex = 27;
+            this.Amtlbl.Text = "Валюта";
             // 
             // label5
             // 
@@ -332,6 +345,7 @@
             this.BillsDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.BillsDGV.Location = new System.Drawing.Point(584, 411);
             this.BillsDGV.Name = "BillsDGV";
+            this.BillsDGV.ReadOnly = true;
             this.BillsDGV.RowHeadersVisible = false;
             this.BillsDGV.RowTemplate.Height = 28;
             this.BillsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -351,7 +365,7 @@
             this.BillsDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.BillsDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.BillsDGV.ThemeStyle.HeaderStyle.Height = 30;
-            this.BillsDGV.ThemeStyle.ReadOnly = false;
+            this.BillsDGV.ThemeStyle.ReadOnly = true;
             this.BillsDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.BillsDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.BillsDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -359,6 +373,7 @@
             this.BillsDGV.ThemeStyle.RowsStyle.Height = 28;
             this.BillsDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.BillsDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.BillsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BillsDGV_CellContentClick);
             // 
             // btnRefresh
             // 
@@ -429,6 +444,7 @@
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ProdoQty
             // 
@@ -491,24 +507,24 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Название товара";
             // 
-            // ProdoId
+            // BillID
             // 
-            this.ProdoId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ProdoId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ProdoId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ProdoId.HintForeColor = System.Drawing.Color.Empty;
-            this.ProdoId.HintText = "";
-            this.ProdoId.isPassword = false;
-            this.ProdoId.LineFocusedColor = System.Drawing.Color.WhiteSmoke;
-            this.ProdoId.LineIdleColor = System.Drawing.Color.White;
-            this.ProdoId.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
-            this.ProdoId.LineThickness = 3;
-            this.ProdoId.Location = new System.Drawing.Point(233, 100);
-            this.ProdoId.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ProdoId.Name = "ProdoId";
-            this.ProdoId.Size = new System.Drawing.Size(310, 34);
-            this.ProdoId.TabIndex = 4;
-            this.ProdoId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BillID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.BillID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BillID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BillID.HintForeColor = System.Drawing.Color.Empty;
+            this.BillID.HintText = "";
+            this.BillID.isPassword = false;
+            this.BillID.LineFocusedColor = System.Drawing.Color.WhiteSmoke;
+            this.BillID.LineIdleColor = System.Drawing.Color.White;
+            this.BillID.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
+            this.BillID.LineThickness = 3;
+            this.BillID.Location = new System.Drawing.Point(233, 100);
+            this.BillID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BillID.Name = "BillID";
+            this.BillID.Size = new System.Drawing.Size(310, 34);
+            this.BillID.TabIndex = 4;
+            this.BillID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
             // 
@@ -517,9 +533,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(21, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.Size = new System.Drawing.Size(56, 23);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Счёт";
+            this.label2.Text = "BillId";
             // 
             // label1
             // 
@@ -535,9 +551,10 @@
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel.Controls.Add(this.label6);
             this.panel.Controls.Add(this.label7);
             this.panel.Controls.Add(this.OrderDGV);
-            this.panel.Controls.Add(this.label6);
+            this.panel.Controls.Add(this.Amtlbl);
             this.panel.Controls.Add(this.label5);
             this.panel.Controls.Add(this.btnAddProduct);
             this.panel.Controls.Add(this.SellerNamelbl);
@@ -555,7 +572,7 @@
             this.panel.Controls.Add(this.label4);
             this.panel.Controls.Add(this.ProdoName);
             this.panel.Controls.Add(this.label3);
-            this.panel.Controls.Add(this.ProdoId);
+            this.panel.Controls.Add(this.BillID);
             this.panel.Controls.Add(this.label2);
             this.panel.Controls.Add(this.label1);
             this.panel.Location = new System.Drawing.Point(94, 39);
@@ -563,6 +580,52 @@
             this.panel.Size = new System.Drawing.Size(1317, 731);
             this.panel.TabIndex = 21;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id.HeaderText = "ProdId";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // PName
+            // 
+            this.PName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PName.HeaderText = "Название";
+            this.PName.Name = "PName";
+            this.PName.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Price.HeaderText = "Цена";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Qty.HeaderText = "Количество";
+            this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Total.HeaderText = "Счёт";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(1060, 316);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 28);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "рублей";
             // 
             // SellingForm
             // 
@@ -591,7 +654,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label7;
         private Guna.UI.WinForms.GunaDataGridView OrderDGV;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label Amtlbl;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Label SellerNamelbl;
@@ -609,9 +672,15 @@
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuMaterialTextbox ProdoName;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox ProdoId;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox BillID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Label label6;
     }
 }

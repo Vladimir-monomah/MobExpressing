@@ -22,7 +22,7 @@ namespace MobExpress
         private void timer_Tick(object sender, EventArgs e)
         {
             this.startpion += 1;
-            LoadingProgressBar.Value = this.startpion;
+            this.LoadingProgressBar.Value = this.startpion;
             if (this.LoadingProgressBar.Value == 100)
             {
                 this.LoadingProgressBar.Value = 0;
@@ -35,7 +35,7 @@ namespace MobExpress
 
         private void Загрузочный_файл_Load(object sender, EventArgs e)
         {
-            timer.Start();
+            this.timer.Start();
         }
     }
 }

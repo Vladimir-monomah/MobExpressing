@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace MobExpress.Управление_товаром
 {
@@ -15,9 +9,9 @@ namespace MobExpress.Управление_товаром
     {
         public Форма_продавца()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
-        OleDbConnection Con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\vladi\Desktop\MobExpress\MobExpress\MobExpress.mdb;Persist Security Info=True;User ID=admin");
+        OleDbConnection Con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\vladi\Desktop\MobExpress\MobExpress\MobExpress\MobExpress.mdb;Persist Security Info=True;User ID=admin");
         /// <summary>
         /// Закрытие формы
         /// </summary>
