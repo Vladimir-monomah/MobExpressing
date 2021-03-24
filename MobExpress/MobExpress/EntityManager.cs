@@ -42,7 +42,7 @@ namespace MobExpress
             var filterUserCommand = new OleDbCommand()
             {
                 Connection = пользовательTableAdapter.Connection,
-                CommandText = "SELECT Id_user, Фамилия, Имя, Телефон, Логин, Пароль, " +
+                CommandText = "SELECT Id_user, Фамилия, Имя, Телефон, Возраст, Логин, Пароль, " +
                 $"[Является администратором] FROM Пользователь {whereCondition}",
                 CommandType = global::System.Data.CommandType.Text
             };

@@ -159,6 +159,7 @@
             this.cbCategoryRefresh.Size = new System.Drawing.Size(202, 31);
             this.cbCategoryRefresh.TabIndex = 17;
             this.cbCategoryRefresh.Text = "Выбор категории";
+            this.cbCategoryRefresh.SelectionChangeCommitted += new System.EventHandler(this.cbCategoryRefresh_SelectionChangeCommitted);
             // 
             // btnDelete
             // 
@@ -275,6 +276,7 @@
             this.btnSeller.TabIndex = 3;
             this.btnSeller.Text = "Продавец";
             this.btnSeller.UseVisualStyleBackColor = true;
+            this.btnSeller.Click += new System.EventHandler(this.btnSeller_Click);
             // 
             // label5
             // 
@@ -389,6 +391,7 @@
             this.btnSelling.TabIndex = 6;
             this.btnSelling.Text = "Продажа";
             this.btnSelling.UseVisualStyleBackColor = true;
+            this.btnSelling.Click += new System.EventHandler(this.btnSelling_Click);
             // 
             // label4
             // 

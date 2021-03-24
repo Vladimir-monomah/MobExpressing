@@ -42,6 +42,8 @@
             this.TbLogin = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TbPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TbName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.TbAge = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnReg
@@ -62,7 +64,7 @@
             this.BtnReg.IdleFillColor = System.Drawing.Color.DarkOrange;
             this.BtnReg.IdleForecolor = System.Drawing.Color.White;
             this.BtnReg.IdleLineColor = System.Drawing.Color.SeaShell;
-            this.BtnReg.Location = new System.Drawing.Point(158, 461);
+            this.BtnReg.Location = new System.Drawing.Point(116, 512);
             this.BtnReg.Margin = new System.Windows.Forms.Padding(5);
             this.BtnReg.Name = "BtnReg";
             this.BtnReg.Size = new System.Drawing.Size(390, 58);
@@ -75,7 +77,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label6.Location = new System.Drawing.Point(67, 409);
+            this.label6.Location = new System.Drawing.Point(67, 468);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 23);
             this.label6.TabIndex = 26;
@@ -97,7 +99,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label4.Location = new System.Drawing.Point(67, 334);
+            this.label4.Location = new System.Drawing.Point(67, 393);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 23);
             this.label4.TabIndex = 22;
@@ -200,7 +202,7 @@
             this.TbLogin.LineIdleColor = System.Drawing.Color.DarkOrange;
             this.TbLogin.LineMouseHoverColor = System.Drawing.Color.OrangeRed;
             this.TbLogin.LineThickness = 3;
-            this.TbLogin.Location = new System.Drawing.Point(173, 313);
+            this.TbLogin.Location = new System.Drawing.Point(173, 372);
             this.TbLogin.Margin = new System.Windows.Forms.Padding(4);
             this.TbLogin.Name = "TbLogin";
             this.TbLogin.Size = new System.Drawing.Size(229, 44);
@@ -219,7 +221,7 @@
             this.TbPassword.LineIdleColor = System.Drawing.Color.DarkOrange;
             this.TbPassword.LineMouseHoverColor = System.Drawing.Color.OrangeRed;
             this.TbPassword.LineThickness = 3;
-            this.TbPassword.Location = new System.Drawing.Point(173, 388);
+            this.TbPassword.Location = new System.Drawing.Point(173, 447);
             this.TbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.Size = new System.Drawing.Size(229, 44);
@@ -246,11 +248,43 @@
             this.TbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbName_KeyPress);
             // 
+            // TbAge
+            // 
+            this.TbAge.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TbAge.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TbAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TbAge.HintForeColor = System.Drawing.Color.Empty;
+            this.TbAge.HintText = "";
+            this.TbAge.isPassword = false;
+            this.TbAge.LineFocusedColor = System.Drawing.Color.OrangeRed;
+            this.TbAge.LineIdleColor = System.Drawing.Color.DarkOrange;
+            this.TbAge.LineMouseHoverColor = System.Drawing.Color.OrangeRed;
+            this.TbAge.LineThickness = 3;
+            this.TbAge.Location = new System.Drawing.Point(173, 309);
+            this.TbAge.Margin = new System.Windows.Forms.Padding(4);
+            this.TbAge.Name = "TbAge";
+            this.TbAge.Size = new System.Drawing.Size(229, 44);
+            this.TbAge.TabIndex = 35;
+            this.TbAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label7.Location = new System.Drawing.Point(67, 330);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 23);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Возраст";
+            // 
             // Регистрация
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 530);
+            this.ClientSize = new System.Drawing.Size(615, 584);
+            this.Controls.Add(this.TbAge);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.TbName);
             this.Controls.Add(this.TbPassword);
             this.Controls.Add(this.TbLogin);
@@ -289,5 +323,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox TbLogin;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TbPassword;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TbName;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TbAge;
+        private System.Windows.Forms.Label label7;
     }
 }

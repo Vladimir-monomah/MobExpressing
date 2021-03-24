@@ -52,6 +52,8 @@
             this.btnCategory = new System.Windows.Forms.Button();
             this.SellerName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel = new System.Windows.Forms.Panel();
+            this.SellerFirstName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SellerDGV)).BeginInit();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -141,7 +143,7 @@
             this.SellerPassword.LineIdleColor = System.Drawing.Color.White;
             this.SellerPassword.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
             this.SellerPassword.LineThickness = 3;
-            this.SellerPassword.Location = new System.Drawing.Point(157, 374);
+            this.SellerPassword.Location = new System.Drawing.Point(157, 429);
             this.SellerPassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SellerPassword.Name = "SellerPassword";
             this.SellerPassword.Size = new System.Drawing.Size(363, 34);
@@ -155,7 +157,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDelete.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnDelete.Location = new System.Drawing.Point(385, 447);
+            this.btnDelete.Location = new System.Drawing.Point(385, 502);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(137, 41);
             this.btnDelete.TabIndex = 15;
@@ -170,7 +172,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEdit.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnEdit.Location = new System.Drawing.Point(157, 447);
+            this.btnEdit.Location = new System.Drawing.Point(157, 502);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(222, 41);
             this.btnEdit.TabIndex = 14;
@@ -185,7 +187,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAdd.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnAdd.Location = new System.Drawing.Point(3, 447);
+            this.btnAdd.Location = new System.Drawing.Point(3, 502);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(148, 41);
             this.btnAdd.TabIndex = 13;
@@ -198,7 +200,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(21, 385);
+            this.label6.Location = new System.Drawing.Point(21, 440);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 23);
             this.label6.TabIndex = 11;
@@ -216,7 +218,7 @@
             this.SellerPhone.LineIdleColor = System.Drawing.Color.White;
             this.SellerPhone.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
             this.SellerPhone.LineThickness = 3;
-            this.SellerPhone.Location = new System.Drawing.Point(159, 306);
+            this.SellerPhone.Location = new System.Drawing.Point(159, 361);
             this.SellerPhone.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SellerPhone.Name = "SellerPhone";
             this.SellerPhone.Size = new System.Drawing.Size(361, 34);
@@ -228,7 +230,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(21, 317);
+            this.label5.Location = new System.Drawing.Point(21, 372);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 9;
@@ -273,7 +275,7 @@
             this.SellerAge.LineIdleColor = System.Drawing.Color.White;
             this.SellerAge.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
             this.SellerAge.LineThickness = 3;
-            this.SellerAge.Location = new System.Drawing.Point(159, 235);
+            this.SellerAge.Location = new System.Drawing.Point(161, 301);
             this.SellerAge.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SellerAge.Name = "SellerAge";
             this.SellerAge.Size = new System.Drawing.Size(361, 34);
@@ -285,7 +287,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(21, 238);
+            this.label4.Location = new System.Drawing.Point(21, 312);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 23);
             this.label4.TabIndex = 7;
@@ -378,6 +380,8 @@
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel.Controls.Add(this.SellerFirstName);
+            this.panel.Controls.Add(this.label7);
             this.panel.Controls.Add(this.SellerDGV);
             this.panel.Controls.Add(this.SellerPassword);
             this.panel.Controls.Add(this.btnDelete);
@@ -398,6 +402,36 @@
             this.panel.Size = new System.Drawing.Size(1245, 750);
             this.panel.TabIndex = 7;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            // 
+            // SellerFirstName
+            // 
+            this.SellerFirstName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SellerFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SellerFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SellerFirstName.HintForeColor = System.Drawing.Color.Empty;
+            this.SellerFirstName.HintText = "";
+            this.SellerFirstName.isPassword = false;
+            this.SellerFirstName.LineFocusedColor = System.Drawing.Color.WhiteSmoke;
+            this.SellerFirstName.LineIdleColor = System.Drawing.Color.White;
+            this.SellerFirstName.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
+            this.SellerFirstName.LineThickness = 3;
+            this.SellerFirstName.Location = new System.Drawing.Point(161, 238);
+            this.SellerFirstName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SellerFirstName.Name = "SellerFirstName";
+            this.SellerFirstName.Size = new System.Drawing.Size(361, 34);
+            this.SellerFirstName.TabIndex = 20;
+            this.SellerFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(23, 241);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 23);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Фамилия";
             // 
             // Форма_продавца
             // 
@@ -443,5 +477,7 @@
         private System.Windows.Forms.Button btnCategory;
         private Bunifu.Framework.UI.BunifuMaterialTextbox SellerName;
         private System.Windows.Forms.Panel panel;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox SellerFirstName;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace MobExpress.Управление_товаром
 {
@@ -38,6 +39,7 @@ namespace MobExpress.Управление_товаром
         {
             this.Populate();
             this.PopulateBills();
+            this.FileCombo();
         }
 
         /// <summary>
@@ -55,7 +57,6 @@ namespace MobExpress.Управление_товаром
             this.Con.Close();
         }
 
-        int flag = 0;
         /// <summary>
         /// Отображение строк в БД
         /// </summary>
@@ -110,7 +111,70 @@ namespace MobExpress.Управление_товаром
 
         private void BillsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.flag = 1;
+            
+        }
+
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("FILEMOBEXPRESS", new Font("Centure Gothic", 25,
+                FontStyle.Bold),Brushes.Red,new Point(230));
+            e.Graphics.DrawString("Bill ID:"+this.BillsDGV.SelectedRows[0].Cells[0].Value.ToString(), new Font("Centure Gothic", 20,
+                FontStyle.Bold), Brushes.Blue, new Point(100,70));
+            e.Graphics.DrawString("Имя продавца:" + this.BillsDGV.SelectedRows[0].Cells[1].Value.ToString(), new Font("Centure Gothic", 20,
+                FontStyle.Bold), Brushes.Blue, new Point(100, 100));
+            e.Graphics.DrawString("Дата:" + this.BillsDGV.SelectedRows[0].Cells[2].Value.ToString(), new Font("Centure Gothic", 20,
+                FontStyle.Bold), Brushes.Blue, new Point(100, 130));
+            e.Graphics.DrawString("Общая сумма:" + this.BillsDGV.SelectedRows[0].Cells[3].Value.ToString(), new Font("Centure Gothic", 20,
+                FontStyle.Bold), Brushes.Blue, new Point(100, 160));
+            e.Graphics.DrawString("Кодовое пространство", new Font("Centure Gothic", 20,
+                FontStyle.Italic), Brushes.Red, new Point(270,230));
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (this.printPreviewDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.printDocument.Print();
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            this.Populate();
+        }
+
+        private void cbCategoryRefresh_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.Con.Open();
+            string query = "select ProdName,ProdQty from ProductTbl where ProdCat='" + this.cbCategoryRefresh.SelectedValue.ToString() + "'";
+            var sda = new OleDbDataAdapter(query, this.Con);
+            var builder = new OleDbCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            this.ProdoDGV.DataSource = ds.Tables[0];
+            this.Con.Close();
+        }
+
+        private void FileCombo()
+        {
+            //Этот метод свяжет поле со списком с базой данных
+            this.Con.Open();
+            var cmd = new OleDbCommand("Select CatName from CategoryTbl", this.Con);
+            OleDbDataReader rdr;
+            rdr = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Columns.Add("CatName", typeof(string));
+            dt.Load(rdr);
+            this.cbCategoryRefresh.ValueMember = "catName";
+            this.cbCategoryRefresh.DataSource = dt;
+            this.Con.Close();
+        }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var log = new Авторизация();
+            log.Show();
         }
 
         /// <summary>

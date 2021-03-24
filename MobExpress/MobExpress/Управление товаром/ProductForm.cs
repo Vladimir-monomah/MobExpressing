@@ -36,6 +36,8 @@ namespace MobExpress.Управление_товаром
             dt.Load(rdr);
             this.cbCategory.ValueMember = "catName";
             this.cbCategory.DataSource = dt;
+            this.cbCategoryRefresh.ValueMember = "catName";
+            this.cbCategoryRefresh.DataSource = dt;
             this.Con.Close();
         }
 
@@ -162,6 +164,29 @@ namespace MobExpress.Управление_товаром
         private void panel_Paint(object sender, PaintEventArgs e)
         {
             this.Populate();
+        }
+
+        private void cbCategoryRefresh_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.Con.Open();
+            string query = "select * from ProductTbl where ProdCat='" + this.cbCategory.SelectedValue.ToString() + "'";
+            var sda = new OleDbDataAdapter(query, this.Con);
+            var builder = new OleDbCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            this.ProdDGV.DataSource = ds.Tables[0];
+            this.Con.Close();
+        }
+
+        private void btnSeller_Click(object sender, EventArgs e)
+        {
+            var seller = new Форма_продавца();
+            seller.Show();
+        }
+
+        private void btnSelling_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

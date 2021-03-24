@@ -28,7 +28,7 @@ namespace MobExpress.Управление_товаром
         private void Populate()
         {
             this.Con.Open();
-            string query = "select * from SellerTbl";
+            string query = "select * from Пользователь";
             var sda = new OleDbDataAdapter(query, this.Con);
             var builder = new OleDbCommandBuilder(sda);
             var ds = new DataSet();
@@ -47,8 +47,8 @@ namespace MobExpress.Управление_товаром
             try
             {
                 this.Con.Open();
-                string query = "insert into SellerTbl values(" + this.SellerID.Text + ",'"
-                    + this.SellerName.Text + "'," + this.SellerAge.Text + "," +
+                string query = "insert into Пользователь values(" + this.SellerID.Text + ",'"
+                    + this.SellerName.Text + "'," + this.SellerFirstName.Text + "," + this.SellerAge.Text + "," +
                     "" + this.SellerPhone.Text + "," +
                     "'" + this.SellerPassword.Text + "')";
                 var cmd = new OleDbCommand(query, this.Con);
@@ -90,7 +90,7 @@ namespace MobExpress.Управление_товаром
                 else
                 {
                     this.Con.Open();
-                    string query = "delete from SellerTbl where SellerId=" + this.SellerID.Text + "";
+                    string query = "delete from Пользователь where SellerId=" + this.SellerID.Text + "";
                     var cmd = new OleDbCommand(query, this.Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Удаление продавца прошло успешно!");
@@ -122,7 +122,7 @@ namespace MobExpress.Управление_товаром
                 else
                 {
                     this.Con.Open();
-                    string query = "Update SellerTbl set SelelrName='" + this.SellerName.Text + "'," +
+                    string query = "Update Пользователь set SelelrName='" + this.SellerName.Text + "'," +
                         " SellerAge='" + this.SellerAge.Text + "',SellerPhone='" + this.SellerPhone.Text +
                         "',SellerPassword='" + this.SellerPassword.Text +
                         "'where SellerId=" + this.SellerID.Text + ";";
