@@ -67,6 +67,7 @@ namespace MobExpress.Управление_товаром
                 this.SellerName.Text = "";
                 this.SellerFirstName.Text = "";
                 this.SellerAge.Text = "";
+                this.SellerLogin.Text = "";
                 this.SellerPhone.Text = "";
                 this.SellerPassword.Text = "";
             }
@@ -81,9 +82,11 @@ namespace MobExpress.Управление_товаром
         {
             this.SellerID.Text = this.SellerDGV.SelectedRows[0].Cells[0].Value.ToString();
             this.SellerName.Text = this.SellerDGV.SelectedRows[0].Cells[1].Value.ToString();
-            this.SellerAge.Text = this.SellerDGV.SelectedRows[0].Cells[2].Value.ToString();
-            this.SellerPhone.Text = this.SellerDGV.SelectedRows[0].Cells[3].Value.ToString();
-            this.SellerPassword.Text = this.SellerDGV.SelectedRows[0].Cells[4].Value.ToString();
+            this.SellerFirstName.Text = this.SellerDGV.SelectedRows[0].Cells[2].Value.ToString();
+            this.SellerAge.Text = this.SellerDGV.SelectedRows[0].Cells[3].Value.ToString();
+            this.SellerLogin.Text = this.SellerDGV.SelectedRows[0].Cells[4].Value.ToString();
+            this.SellerPhone.Text = this.SellerDGV.SelectedRows[0].Cells[5].Value.ToString();
+            this.SellerPassword.Text = this.SellerDGV.SelectedRows[0].Cells[6].Value.ToString();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
