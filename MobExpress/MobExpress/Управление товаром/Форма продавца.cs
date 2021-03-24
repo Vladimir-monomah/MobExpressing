@@ -61,8 +61,6 @@ namespace MobExpress.Управление_товаром
                 MessageBox.Show("Продавец добавлен успешно!");
                 this.Con.Close();
                 this.Populate();
-                this.Con.Close();
-                this.Populate();
                 this.SellerID.Text = "";
                 this.SellerName.Text = "";
                 this.SellerFirstName.Text = "";
