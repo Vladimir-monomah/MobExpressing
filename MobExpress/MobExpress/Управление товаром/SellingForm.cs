@@ -13,7 +13,7 @@ namespace MobExpress.Управление_товаром
             this.InitializeComponent();
         }
 
-        OleDbConnection Con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\vladi\Desktop\MobExpress\MobExpress\MobExpress\MobExpress.mdb;Persist Security Info=True;User ID=admin");
+        OleDbConnection Con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=MobExpress.mdb;Persist Security Info=True;User ID=admin");
 
         private void btnClose_Click(object sender, EventArgs e)
         {

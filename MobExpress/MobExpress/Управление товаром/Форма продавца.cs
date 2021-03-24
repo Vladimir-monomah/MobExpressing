@@ -11,7 +11,7 @@ namespace MobExpress.Управление_товаром
         {
             this.InitializeComponent();
         }
-        OleDbConnection Con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\vladi\Desktop\MobExpress\MobExpress\MobExpress\MobExpress.mdb;Persist Security Info=True;User ID=admin");
+        OleDbConnection Con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=MobExpress.mdb;Persist Security Info=True;User ID=admin");
         /// <summary>
         /// Закрытие формы
         /// </summary>
@@ -47,10 +47,15 @@ namespace MobExpress.Управление_товаром
             try
             {
                 this.Con.Open();
-                string query = "insert into Пользователь values(" + this.SellerID.Text + ",'"
-                    + this.SellerName.Text + "'," + this.SellerFirstName.Text + "," + this.SellerAge.Text + "," +
-                    "" + this.SellerPhone.Text + "," +
-                    "'" + this.SellerPassword.Text + "')";
+                string query = "insert into Пользователь values("
+                    + this.SellerID.Text + ",'"
+                    + this.SellerName.Text + "',"
+                    + this.SellerFirstName.Text + ","
+                    + this.SellerAge.Text + ","
+                    + this.SellerLogin.Text+","
+                    + this.SellerPhone.Text + ","
+                    + "'" + this.SellerPassword.Text + "',"
+                    + (this.cbAdmin.Checked ? "true" : "false") + ")";
                 var cmd = new OleDbCommand(query, this.Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Продавец добавлен успешно!");
@@ -60,6 +65,7 @@ namespace MobExpress.Управление_товаром
                 this.Populate();
                 this.SellerID.Text = "";
                 this.SellerName.Text = "";
+                this.SellerFirstName.Text = "";
                 this.SellerAge.Text = "";
                 this.SellerPhone.Text = "";
                 this.SellerPassword.Text = "";
@@ -68,6 +74,7 @@ namespace MobExpress.Управление_товаром
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void SellerDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
