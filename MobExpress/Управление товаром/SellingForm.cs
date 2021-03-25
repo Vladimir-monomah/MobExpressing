@@ -6,11 +6,14 @@ using System.Drawing;
 
 namespace MobExpress.Управление_товаром
 {
+
     public partial class SellingForm : Form
     {
-        public SellingForm(Int64 userId)
+        public SellingForm(Int64 userId, MobExpressDataSet.ПользовательRow user)
         {
             this.InitializeComponent();
+
+            this.SellerNamelbl.Text = user.Имя + " " + user.Фамилия;
         }
 
         OleDbConnection Con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=MobExpress.mdb;Persist Security Info=True;User ID=admin");

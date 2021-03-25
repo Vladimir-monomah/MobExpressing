@@ -38,7 +38,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.SellerPhone = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSeller = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.SellerAge = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,14 +48,7 @@
             this.btnCategory = new System.Windows.Forms.Button();
             this.SellerName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel = new System.Windows.Forms.Panel();
-            this.SellerFirstName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.SellerLogin = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label8 = new System.Windows.Forms.Label();
             this.SellerDGV = new System.Windows.Forms.DataGridView();
-            this.mobExpressDataSet = new MobExpress.MobExpressDataSet();
-            this.пользовательBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.пользовательTableAdapter = new MobExpress.MobExpressDataSetTableAdapters.ПользовательTableAdapter();
             this.iduserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,10 +56,18 @@
             this.телефонDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.логинDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.парольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.пользовательBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mobExpressDataSet = new MobExpress.MobExpressDataSet();
+            this.SellerFirstName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.SellerLogin = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.пользовательTableAdapter = new MobExpress.MobExpressDataSetTableAdapters.ПользовательTableAdapter();
+            this.lblLogout = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SellerDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mobExpressDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.пользовательBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mobExpressDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProducts
@@ -82,6 +82,7 @@
             this.btnProducts.TabIndex = 9;
             this.btnProducts.Text = "Товары";
             this.btnProducts.UseVisualStyleBackColor = true;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // SellerPassword
             // 
@@ -187,19 +188,6 @@
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 9;
             this.label5.Text = "Телефон";
-            // 
-            // btnSeller
-            // 
-            this.btnSeller.FlatAppearance.BorderSize = 0;
-            this.btnSeller.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeller.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSeller.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnSeller.Location = new System.Drawing.Point(3, 276);
-            this.btnSeller.Name = "btnSeller";
-            this.btnSeller.Size = new System.Drawing.Size(159, 41);
-            this.btnSeller.TabIndex = 11;
-            this.btnSeller.Text = "Продажа";
-            this.btnSeller.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
@@ -309,6 +297,7 @@
             this.btnCategory.TabIndex = 10;
             this.btnCategory.Text = "Категория";
             this.btnCategory.UseVisualStyleBackColor = true;
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // SellerName
             // 
@@ -356,6 +345,90 @@
             this.panel.Size = new System.Drawing.Size(1245, 750);
             this.panel.TabIndex = 7;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            // 
+            // SellerDGV
+            // 
+            this.SellerDGV.AutoGenerateColumns = false;
+            this.SellerDGV.BackgroundColor = System.Drawing.Color.White;
+            this.SellerDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SellerDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iduserDataGridViewTextBoxColumn,
+            this.фамилияDataGridViewTextBoxColumn,
+            this.имяDataGridViewTextBoxColumn,
+            this.возрастDataGridViewTextBoxColumn,
+            this.телефонDataGridViewTextBoxColumn,
+            this.логинDataGridViewTextBoxColumn,
+            this.парольDataGridViewTextBoxColumn});
+            this.SellerDGV.DataSource = this.пользовательBindingSource;
+            this.SellerDGV.Location = new System.Drawing.Point(553, 100);
+            this.SellerDGV.Name = "SellerDGV";
+            this.SellerDGV.RowTemplate.Height = 24;
+            this.SellerDGV.Size = new System.Drawing.Size(689, 643);
+            this.SellerDGV.TabIndex = 22;
+            // 
+            // iduserDataGridViewTextBoxColumn
+            // 
+            this.iduserDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iduserDataGridViewTextBoxColumn.DataPropertyName = "Id_user";
+            this.iduserDataGridViewTextBoxColumn.HeaderText = "Id_user";
+            this.iduserDataGridViewTextBoxColumn.Name = "iduserDataGridViewTextBoxColumn";
+            this.iduserDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фамилияDataGridViewTextBoxColumn
+            // 
+            this.фамилияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
+            this.фамилияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // имяDataGridViewTextBoxColumn
+            // 
+            this.имяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            this.имяDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // возрастDataGridViewTextBoxColumn
+            // 
+            this.возрастDataGridViewTextBoxColumn.DataPropertyName = "Возраст";
+            this.возрастDataGridViewTextBoxColumn.HeaderText = "Возраст";
+            this.возрастDataGridViewTextBoxColumn.Name = "возрастDataGridViewTextBoxColumn";
+            // 
+            // телефонDataGridViewTextBoxColumn
+            // 
+            this.телефонDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.телефонDataGridViewTextBoxColumn.DataPropertyName = "Телефон";
+            this.телефонDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.телефонDataGridViewTextBoxColumn.Name = "телефонDataGridViewTextBoxColumn";
+            this.телефонDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // логинDataGridViewTextBoxColumn
+            // 
+            this.логинDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.логинDataGridViewTextBoxColumn.DataPropertyName = "Логин";
+            this.логинDataGridViewTextBoxColumn.HeaderText = "Логин";
+            this.логинDataGridViewTextBoxColumn.Name = "логинDataGridViewTextBoxColumn";
+            this.логинDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // парольDataGridViewTextBoxColumn
+            // 
+            this.парольDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.парольDataGridViewTextBoxColumn.DataPropertyName = "Пароль";
+            this.парольDataGridViewTextBoxColumn.HeaderText = "Пароль";
+            this.парольDataGridViewTextBoxColumn.Name = "парольDataGridViewTextBoxColumn";
+            this.парольDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // пользовательBindingSource
+            // 
+            this.пользовательBindingSource.DataMember = "Пользователь";
+            this.пользовательBindingSource.DataSource = this.mobExpressDataSet;
+            // 
+            // mobExpressDataSet
+            // 
+            this.mobExpressDataSet.DataSetName = "MobExpressDataSet";
+            this.mobExpressDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // SellerFirstName
             // 
@@ -417,101 +490,30 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Логин";
             // 
-            // SellerDGV
-            // 
-            this.SellerDGV.AutoGenerateColumns = false;
-            this.SellerDGV.BackgroundColor = System.Drawing.Color.White;
-            this.SellerDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SellerDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iduserDataGridViewTextBoxColumn,
-            this.фамилияDataGridViewTextBoxColumn,
-            this.имяDataGridViewTextBoxColumn,
-            this.возрастDataGridViewTextBoxColumn,
-            this.телефонDataGridViewTextBoxColumn,
-            this.логинDataGridViewTextBoxColumn,
-            this.парольDataGridViewTextBoxColumn});
-            this.SellerDGV.DataSource = this.пользовательBindingSource;
-            this.SellerDGV.Location = new System.Drawing.Point(553, 100);
-            this.SellerDGV.Name = "SellerDGV";
-            this.SellerDGV.RowTemplate.Height = 24;
-            this.SellerDGV.Size = new System.Drawing.Size(669, 527);
-            this.SellerDGV.TabIndex = 22;
-            // 
-            // mobExpressDataSet
-            // 
-            this.mobExpressDataSet.DataSetName = "MobExpressDataSet";
-            this.mobExpressDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // пользовательBindingSource
-            // 
-            this.пользовательBindingSource.DataMember = "Пользователь";
-            this.пользовательBindingSource.DataSource = this.mobExpressDataSet;
-            // 
             // пользовательTableAdapter
             // 
             this.пользовательTableAdapter.ClearBeforeFill = true;
             // 
-            // iduserDataGridViewTextBoxColumn
+            // lblLogout
             // 
-            this.iduserDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.iduserDataGridViewTextBoxColumn.DataPropertyName = "Id_user";
-            this.iduserDataGridViewTextBoxColumn.HeaderText = "Id_user";
-            this.iduserDataGridViewTextBoxColumn.Name = "iduserDataGridViewTextBoxColumn";
-            this.iduserDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // фамилияDataGridViewTextBoxColumn
-            // 
-            this.фамилияDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
-            this.фамилияDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // имяDataGridViewTextBoxColumn
-            // 
-            this.имяDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
-            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
-            this.имяDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // возрастDataGridViewTextBoxColumn
-            // 
-            this.возрастDataGridViewTextBoxColumn.DataPropertyName = "Возраст";
-            this.возрастDataGridViewTextBoxColumn.HeaderText = "Возраст";
-            this.возрастDataGridViewTextBoxColumn.Name = "возрастDataGridViewTextBoxColumn";
-            // 
-            // телефонDataGridViewTextBoxColumn
-            // 
-            this.телефонDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.телефонDataGridViewTextBoxColumn.DataPropertyName = "Телефон";
-            this.телефонDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.телефонDataGridViewTextBoxColumn.Name = "телефонDataGridViewTextBoxColumn";
-            this.телефонDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // логинDataGridViewTextBoxColumn
-            // 
-            this.логинDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.логинDataGridViewTextBoxColumn.DataPropertyName = "Логин";
-            this.логинDataGridViewTextBoxColumn.HeaderText = "Логин";
-            this.логинDataGridViewTextBoxColumn.Name = "логинDataGridViewTextBoxColumn";
-            this.логинDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // парольDataGridViewTextBoxColumn
-            // 
-            this.парольDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.парольDataGridViewTextBoxColumn.DataPropertyName = "Пароль";
-            this.парольDataGridViewTextBoxColumn.HeaderText = "Пароль";
-            this.парольDataGridViewTextBoxColumn.Name = "парольDataGridViewTextBoxColumn";
-            this.парольDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblLogout.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblLogout.Location = new System.Drawing.Point(42, 758);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(74, 23);
+            this.lblLogout.TabIndex = 32;
+            this.lblLogout.Text = "Выход";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
             // Форма_продавца
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1427, 793);
+            this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.btnProducts);
-            this.Controls.Add(this.btnSeller);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCategory);
             this.Controls.Add(this.panel);
@@ -524,9 +526,10 @@
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SellerDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mobExpressDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.пользовательBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mobExpressDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -540,7 +543,6 @@
         private System.Windows.Forms.Label label6;
         private Bunifu.Framework.UI.BunifuMaterialTextbox SellerPhone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnSeller;
         private System.Windows.Forms.Button btnClose;
         private Bunifu.Framework.UI.BunifuMaterialTextbox SellerAge;
         private System.Windows.Forms.Label label4;
@@ -555,10 +557,10 @@
         private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuMaterialTextbox SellerLogin;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView SellerDGV;
         private MobExpressDataSet mobExpressDataSet;
         private System.Windows.Forms.BindingSource пользовательBindingSource;
         private MobExpressDataSetTableAdapters.ПользовательTableAdapter пользовательTableAdapter;
+        private System.Windows.Forms.DataGridView SellerDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn iduserDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
@@ -566,5 +568,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn телефонDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn логинDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn парольDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblLogout;
     }
 }

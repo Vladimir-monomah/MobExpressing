@@ -51,9 +51,9 @@
             this.ProdId = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSelling = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
+            this.lblLogout = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProdDGV)).BeginInit();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -379,20 +379,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Управление товаром";
             // 
-            // btnSelling
-            // 
-            this.btnSelling.FlatAppearance.BorderSize = 0;
-            this.btnSelling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelling.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSelling.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnSelling.Location = new System.Drawing.Point(12, 233);
-            this.btnSelling.Name = "btnSelling";
-            this.btnSelling.Size = new System.Drawing.Size(159, 41);
-            this.btnSelling.TabIndex = 6;
-            this.btnSelling.Text = "Продажа";
-            this.btnSelling.UseVisualStyleBackColor = true;
-            this.btnSelling.Click += new System.EventHandler(this.btnSelling_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -430,15 +416,28 @@
             this.panel.TabIndex = 4;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblLogout.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblLogout.Location = new System.Drawing.Point(45, 759);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(74, 23);
+            this.lblLogout.TabIndex = 32;
+            this.lblLogout.Text = "Выход";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1423, 793);
+            this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCategory);
             this.Controls.Add(this.btnSeller);
-            this.Controls.Add(this.btnSelling);
             this.Controls.Add(this.panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -450,6 +449,7 @@
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -474,8 +474,8 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox ProdId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSelling;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Label lblLogout;
     }
 }

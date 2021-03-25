@@ -45,9 +45,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnSelling = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.btnSellers = new System.Windows.Forms.Button();
+            this.lblLogout = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CatDGV)).BeginInit();
             this.SuspendLayout();
@@ -291,19 +291,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnSelling
-            // 
-            this.btnSelling.FlatAppearance.BorderSize = 0;
-            this.btnSelling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelling.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSelling.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnSelling.Location = new System.Drawing.Point(9, 311);
-            this.btnSelling.Name = "btnSelling";
-            this.btnSelling.Size = new System.Drawing.Size(159, 41);
-            this.btnSelling.TabIndex = 14;
-            this.btnSelling.Text = "Продажа";
-            this.btnSelling.UseVisualStyleBackColor = true;
-            // 
             // btnProducts
             // 
             this.btnProducts.FlatAppearance.BorderSize = 0;
@@ -330,15 +317,29 @@
             this.btnSellers.TabIndex = 12;
             this.btnSellers.Text = "Продавцы";
             this.btnSellers.UseVisualStyleBackColor = true;
+            this.btnSellers.Click += new System.EventHandler(this.btnSellers_Click);
+            // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblLogout.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblLogout.Location = new System.Drawing.Point(44, 759);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(74, 23);
+            this.lblLogout.TabIndex = 33;
+            this.lblLogout.Text = "Выход";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
             // Форма_категорий
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1270, 793);
+            this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSelling);
             this.Controls.Add(this.btnProducts);
             this.Controls.Add(this.btnSellers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -351,6 +352,7 @@
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CatDGV)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -369,8 +371,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnSelling;
         private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Button btnSellers;
+        private System.Windows.Forms.Label lblLogout;
     }
 }

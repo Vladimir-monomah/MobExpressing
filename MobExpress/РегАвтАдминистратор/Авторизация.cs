@@ -17,6 +17,8 @@ namespace MobExpress
             this.InitializeComponent();
         }
 
+        public static string Имя = "";
+
         /// <summary>
         /// Закрытие программы
         /// </summary>
@@ -80,7 +82,7 @@ namespace MobExpress
                 }
                 else
                 {
-                    var открыть = new SellingForm(user.Id_user);
+                    var открыть = new SellingForm(user.Id_user,user);
                     this.Hide();
                     открыть.Show();
                 }
@@ -90,6 +92,11 @@ namespace MobExpress
                 MessageBox.Show("Вы ввели неверный логин или пароль!Пользователь в базе не найден!", "Сообщение",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void Авторизация_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

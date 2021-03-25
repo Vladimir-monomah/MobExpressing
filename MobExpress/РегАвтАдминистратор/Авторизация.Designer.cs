@@ -254,6 +254,7 @@
             this.Name = "Авторизация";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
+            this.Load += new System.EventHandler(this.Авторизация_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

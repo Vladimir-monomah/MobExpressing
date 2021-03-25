@@ -10,6 +10,7 @@ namespace MobExpress.Управление_товаром
     public partial class Форма_продавца : Form
     {
         private ПользовательRow пользователь;
+
         public Форма_продавца()
         {
             this.InitializeComponent();
@@ -88,8 +89,7 @@ namespace MobExpress.Управление_товаром
                 }
                 else
                 {
-                    var пользовательTableAdapter = new ПользовательTableAdapter();
-                    пользовательTableAdapter.Adapter.Update(savingUser.Table);
+                    this.пользовательTableAdapter.Adapter.Update(savingUser.Table);
                 }
             }
             catch(Exception ex)
@@ -101,17 +101,6 @@ namespace MobExpress.Управление_товаром
                 ? "Добавление прошло успешно!"
                 : "Изменение завершено успешно!";
             MessageBox.Show(message, "Информация", MessageBoxButtons.OK);
-        }
-
-        private void SellerDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            this.SellerID.Text = this.SellerDGV.SelectedRows[0].Cells[0].Value.ToString();
-            this.SellerName.Text = this.SellerDGV.SelectedRows[0].Cells[1].Value.ToString();
-            this.SellerFirstName.Text = this.SellerDGV.SelectedRows[0].Cells[2].Value.ToString();
-            this.SellerAge.Text = this.SellerDGV.SelectedRows[0].Cells[3].Value.ToString();
-            this.SellerLogin.Text = this.SellerDGV.SelectedRows[0].Cells[4].Value.ToString();
-            this.SellerPhone.Text = this.SellerDGV.SelectedRows[0].Cells[5].Value.ToString();
-            this.SellerPassword.Text = this.SellerDGV.SelectedRows[0].Cells[6].Value.ToString();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -179,6 +168,27 @@ namespace MobExpress.Управление_товаром
             // TODO: данная строка кода позволяет загрузить данные в таблицу "mobExpressDataSet.Пользователь". При необходимости она может быть перемещена или удалена.
             this.пользовательTableAdapter.Fill(this.mobExpressDataSet.Пользователь);
 
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            var product = new ProductForm();
+            product.Show();
+            this.Hide();
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            var cat = new Форма_категорий();
+            cat.Show();
+            this.Hide();
+        }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var log = new Авторизация();
+            log.Show();
         }
     }
 }

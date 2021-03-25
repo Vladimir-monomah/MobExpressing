@@ -147,5 +147,19 @@ namespace MobExpress.Управление_товаром
             prod.Show();
             this.Hide();
         }
+
+        private void btnSellers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var seller = new Форма_продавца();
+            seller.Show();
+        }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var log = new Авторизация();
+            log.Show();
+        }
     }
 }

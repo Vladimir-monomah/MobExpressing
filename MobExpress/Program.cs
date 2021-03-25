@@ -1,8 +1,4 @@
-﻿using MobExpress.Управление_товаром;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace MobExpress
@@ -17,7 +13,7 @@ namespace MobExpress
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Авторизация());
+            Application.Run(new Загрузочный_файл());
         }
     }
 }
