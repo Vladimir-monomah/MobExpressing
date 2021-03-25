@@ -82,6 +82,10 @@ namespace MobExpress.Управление_товаром
                 MessageBox.Show("Товар добавлен успешно!");
                 this.Con.Close();
                 this.Populate();
+                this.ProdId.Text = "";
+                this.ProdName.Text = "";
+                this.ProdQty.Text = "";
+                this.ProdPrice.Text = "";
             }
             catch (Exception ex)
             {

@@ -149,17 +149,14 @@
             // 
             // cbCategoryRefresh
             // 
+            this.cbCategoryRefresh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoryRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbCategoryRefresh.ForeColor = System.Drawing.Color.DarkOrange;
             this.cbCategoryRefresh.FormattingEnabled = true;
-            this.cbCategoryRefresh.Items.AddRange(new object[] {
-            "Администратор",
-            "Продавец"});
             this.cbCategoryRefresh.Location = new System.Drawing.Point(754, 73);
             this.cbCategoryRefresh.Name = "cbCategoryRefresh";
             this.cbCategoryRefresh.Size = new System.Drawing.Size(202, 31);
             this.cbCategoryRefresh.TabIndex = 17;
-            this.cbCategoryRefresh.Text = "Выбор категории";
             this.cbCategoryRefresh.SelectionChangeCommitted += new System.EventHandler(this.cbCategoryRefresh_SelectionChangeCommitted);
             // 
             // btnDelete
@@ -209,17 +206,14 @@
             // 
             // cbCategory
             // 
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbCategory.ForeColor = System.Drawing.Color.DarkOrange;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Items.AddRange(new object[] {
-            "Администратор",
-            "Продавец"});
             this.cbCategory.Location = new System.Drawing.Point(159, 382);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(363, 31);
             this.cbCategory.TabIndex = 12;
-            this.cbCategory.Text = "Выбор категории";
             // 
             // label6
             // 
