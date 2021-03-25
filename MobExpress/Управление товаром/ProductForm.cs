@@ -191,5 +191,10 @@ namespace MobExpress.Управление_товаром
             var log = new Авторизация();
             log.Show();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            this.Populate();
+        }
     }
 }

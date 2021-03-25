@@ -145,6 +145,7 @@
             this.btnRefresh.TabIndex = 18;
             this.btnRefresh.Text = "Обновить";
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // cbCategoryRefresh
             // 

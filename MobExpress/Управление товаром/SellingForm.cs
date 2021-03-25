@@ -112,11 +112,6 @@ namespace MobExpress.Управление_товаром
             }
         }
 
-        private void BillsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawString("FILEMOBEXPRESS", new Font("Centure Gothic", 25,
